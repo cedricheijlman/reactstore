@@ -35,6 +35,7 @@
 
 .cartScaleButton {
   animation: scaleCartButton 1s;
+  color: green;
 }
 
 @keyframes scaleCartButton {
