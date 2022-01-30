@@ -5,10 +5,19 @@ function HomeProductList() {
   const { allProducts, setAllProducts } = useContext(ProductContext);
   console.log(allProducts);
   return (
-    <div>
+    <div className="allProductsList">
       {allProducts &&
         allProducts.map((product) => {
-          return <ProductCard keyId={product.id} key={product.id} />;
+          return (
+            <ProductCard
+              name={product.name}
+              keyId={product.id}
+              key={product.id}
+              price={product.price}
+              image={product.image}
+              creator={product.categories[0]}
+            />
+          );
         })}
     </div>
   );
