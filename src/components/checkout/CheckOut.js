@@ -11,6 +11,7 @@ function CheckOut() {
     <div id="checkOut">
       <div className="checkOut__itemsRow">
         {checkOutCart &&
+          checkOutCart.line_items.length > 0 &&
           checkOutCart.line_items.map((item) => {
             return (
               <CheckOutItem
@@ -20,6 +21,9 @@ function CheckOut() {
               />
             );
           })}
+        {checkOutCart && checkOutCart.line_items.length < 1 && (
+          <h1>No items</h1>
+        )}
       </div>
     </div>
   );

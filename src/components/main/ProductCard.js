@@ -4,14 +4,15 @@ import { ProductContext } from "../../ProductContext";
 import "./productCard.css";
 
 function ProductCard({ name, keyId, price, image, creator, stock }) {
-  // Add Item to Cart
-
   const { setCheckOutCart } = useContext(ProductContext);
+
+  // Add Item to Cart
   function addToCart(idItem) {
     commerce.cart.add(keyId, 1).then((res) => {
-      console.log(res);
+      setCheckOutCart(res.cart);
     });
 
+    // update cart
     commerce.cart.retrieve().then((cart) => {
       setCheckOutCart(cart);
     });

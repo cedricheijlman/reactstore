@@ -5,22 +5,28 @@
 }
 
 .checkOut__itemsRow {
-  border: 1px solid red;
-
   width: 80%;
 }
 
 .checkOut__item {
-  border: 2px solid salmon;
   display: flex;
+  margin: 10px 5px;
 }
 
 .checkOut__itemLeft {
   display: flex;
-  border: 1px solid red;
-  width: 50%;
+
+  min-width: 450px;
+}
+
+.checkOut__itemLeft div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
 }
 
 .checkOut__item img {
+  border-radius: 10px;
   height: 100px;
 }

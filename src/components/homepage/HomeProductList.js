@@ -3,7 +3,7 @@ import ProductCard from "../main/ProductCard";
 import { ProductContext } from "../../ProductContext";
 function HomeProductList() {
   const { allProducts, setAllProducts } = useContext(ProductContext);
-  console.log(allProducts);
+
   return (
     <div className="allProductsList">
       {allProducts &&

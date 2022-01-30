@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import commerce from "../../lib/commerce";
+import { ProductContext } from "../../ProductContext";
 
 function CheckOutItem({ productId, orderItem }) {
   const [productInfo, setProductInfo] = useState(null);
-
+  const { setCheckOutCart } = useContext(ProductContext);
   useEffect(() => {
     commerce.products.retrieve(productId).then((item) => {
       setProductInfo(item);
     });
   }, []);
+
+  function remove(orderItem) {
+    commerce.cart.remove(orderItem.id).then((res) => {
+      setCheckOutCart(res.cart);
+    });
+  }
 
   return (
     <>
@@ -23,7 +30,13 @@ function CheckOutItem({ productId, orderItem }) {
             </div>
           </div>
           <div>
-            <h2>{orderItem.quantity}</h2>
+            <button
+              onClick={() => {
+                remove(orderItem);
+              }}
+            >
+              Remove
+            </button>
           </div>
         </div>
       )}
