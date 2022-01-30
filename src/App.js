@@ -11,7 +11,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [checkOutCart, setCheckOutCart] = useState(null);
   useEffect(() => {
-    // set All products
+    // set All products Test
     commerce.products.list().then((products) => {
       setAllProducts(products.data);
     });
