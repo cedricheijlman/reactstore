@@ -1,6 +1,6 @@
 import Commerce from "@chec/commerce.js";
 
-const checAPIKey = process.env.pk_39183800010b721f6588fc02ec5624ee8898fdad18230;
+const checAPIKey = pk_39183800010b721f6588fc02ec5624ee8898fdad18230;
 
 const commerceConfig = {
   axiosConfig: {
