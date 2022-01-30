@@ -8,11 +8,16 @@ import { ProductContext } from "./ProductContext";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
+    // set All products
     commerce.products.list().then((products) => {
       setAllProducts(products.data);
     });
+
+    // set shoppingCartData
+    commerce.cart.retrieve().then((cart) => console.log(cart));
   }, []);
 
   return (

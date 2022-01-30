@@ -16,6 +16,7 @@ function HomeProductList() {
               price={product.price}
               image={product.image}
               creator={product.categories[0]}
+              stock={product.inventory.available}
             />
           );
         })}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./productCard.css";
 
-function ProductCard({ name, keyId, price, image, creator }) {
+function ProductCard({ name, keyId, price, image, creator, stock }) {
   return (
     <div className="productCard">
       <img src={!image ? "logo.png" : image.url} />
@@ -10,7 +10,7 @@ function ProductCard({ name, keyId, price, image, creator }) {
         <h3>{name}</h3>
         <div className="productCard__priceAndStock">
           <p>{price.formatted_with_symbol}</p>
-          <p>Stock:</p>
+          <p>Available: {stock}</p>
         </div>
         <button>Add To Cart</button>
       </div>
