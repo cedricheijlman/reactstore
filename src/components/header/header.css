@@ -1,0 +1,19 @@
+#navbar {
+  display: flex;
+  background-color: rgba(225, 236, 210, 0.548);
+  width: 100%;
+  padding: 20px 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navbar__right .cart {
+  font-size: 30px;
+}

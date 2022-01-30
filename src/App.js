@@ -1,6 +1,10 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import commerce from "./lib/commerce";
+import Header from "./components/header/Header";
+
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./components/homepage/HomePage";
 
 function App() {
   const [products, setProduct] = useState([]);
@@ -13,13 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <button
-        onClick={() => {
-          console.log(products);
-        }}
-      >
-        Button
-      </button>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
