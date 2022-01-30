@@ -8,13 +8,14 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
 
   // Add Item to Cart
   function addToCart(idItem, e) {
+    // Animation Cart Add
     e.target.classList.add("cartScaleButton");
     e.target.innerHTML = "Added to cart";
+    document.querySelector(".cartLength").classList.add("cartScale");
+
+    // add item
     commerce.cart.add(keyId, 1).then((res) => {
       setCheckOutCart(res.cart);
-
-      // Animation Cart Add
-      document.querySelector(".cartLength").classList.add("cartScale");
 
       setInterval(() => {
         document.querySelector(".cartLength").classList.remove("cartScale");
