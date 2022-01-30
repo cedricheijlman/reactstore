@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
+import "./productCard.css";
 import commerce from "../../lib/commerce";
 import { ProductContext } from "../../ProductContext";
-import "./productCard.css";
 
 function ProductCard({ name, keyId, price, image, creator, stock }) {
   const { setCheckOutCart } = useContext(ProductContext);
