@@ -5,10 +5,10 @@ import Header from "./components/header/Header";
 import HomePage from "./components/homepage/HomePage";
 import { Routes, Route } from "react-router-dom";
 import { ProductContext } from "./ProductContext";
+import CheckOut from "./components/checkout/CheckOut";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
-  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
     // set All products
@@ -17,7 +17,9 @@ function App() {
     });
 
     // set shoppingCartData
-    commerce.cart.retrieve().then((cart) => console.log(cart));
+    commerce.cart.retrieve().then((cart) => {
+      console.log(cart);
+    });
   }, []);
 
   return (
@@ -26,6 +28,7 @@ function App() {
       <ProductContext.Provider value={{ allProducts, setAllProducts }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/checkout" element={<CheckOut />} />
         </Routes>
       </ProductContext.Provider>
     </div>
