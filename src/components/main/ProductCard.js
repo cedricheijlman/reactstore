@@ -1,7 +1,13 @@
 import React from "react";
+import commerce from "../../lib/commerce";
 import "./productCard.css";
 
 function ProductCard({ name, keyId, price, image, creator, stock }) {
+  function addToCart(idItem) {
+    commerce.cart.add(keyId, 1).then((res) => {
+      console.log(res);
+    });
+  }
   return (
     <div className="productCard">
       <img src={!image ? "logo.png" : image.url} />
@@ -12,7 +18,13 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
           <p>{price.formatted_with_symbol}</p>
           <p>Available: {stock}</p>
         </div>
-        <button>Add To Cart</button>
+        <button
+          onClick={(keyId) => {
+            addToCart(keyId);
+          }}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );
