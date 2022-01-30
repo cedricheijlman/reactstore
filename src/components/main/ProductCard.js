@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import commerce from "../../lib/commerce";
+import { ProductContext } from "../../ProductContext";
 import "./productCard.css";
 
 function ProductCard({ name, keyId, price, image, creator, stock }) {
+  // Add Item to Cart
+
+  const { setCheckOutCart } = useContext(ProductContext);
   function addToCart(idItem) {
     commerce.cart.add(keyId, 1).then((res) => {
       console.log(res);
+    });
+
+    commerce.cart.retrieve().then((cart) => {
+      setCheckOutCart(cart);
     });
   }
   return (

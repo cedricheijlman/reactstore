@@ -1,0 +1,26 @@
+#checkOut {
+  border: 5px solid green;
+  height: 60vh;
+  display: flex;
+}
+
+.checkOut__itemsRow {
+  border: 1px solid red;
+
+  width: 80%;
+}
+
+.checkOut__item {
+  border: 2px solid salmon;
+  display: flex;
+}
+
+.checkOut__itemLeft {
+  display: flex;
+  border: 1px solid red;
+  width: 50%;
+}
+
+.checkOut__item img {
+  height: 100px;
+}

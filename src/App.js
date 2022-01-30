@@ -9,7 +9,7 @@ import CheckOut from "./components/checkout/CheckOut";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
-
+  const [checkOutCart, setCheckOutCart] = useState(null);
   useEffect(() => {
     // set All products
     commerce.products.list().then((products) => {
@@ -18,14 +18,16 @@ function App() {
 
     // set shoppingCartData
     commerce.cart.retrieve().then((cart) => {
-      console.log(cart);
+      setCheckOutCart(cart);
     });
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <ProductContext.Provider value={{ allProducts, setAllProducts }}>
+      <ProductContext.Provider
+        value={{ allProducts, setAllProducts, checkOutCart, setCheckOutCart }}
+      >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/checkout" element={<CheckOut />} />
