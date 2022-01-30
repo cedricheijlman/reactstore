@@ -17,3 +17,52 @@
 .navbar__right .cart {
   font-size: 30px;
 }
+
+.cartLength {
+  font-weight: 400;
+  font-size: 19px;
+  border: 1px solid rgb(226, 225, 225);
+  padding: 2px 5px;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cartScale {
+  animation: scaleCart 1s;
+}
+
+.cartScaleButton {
+  animation: scaleCartButton 1s;
+}
+
+@keyframes scaleCartButton {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.1);
+    color: green;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleCart {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.4);
+    color: green;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

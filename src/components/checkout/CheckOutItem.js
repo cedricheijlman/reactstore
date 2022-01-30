@@ -29,7 +29,8 @@ function CheckOutItem({ productId, orderItem }) {
               <p>{orderItem.line_total.formatted_with_symbol}</p>
             </div>
           </div>
-          <div>
+          <div className="checkOut__itemRight">
+            <p>Quantity: {orderItem.quantity}</p>
             <button
               onClick={() => {
                 remove(orderItem);

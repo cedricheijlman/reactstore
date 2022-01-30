@@ -1,22 +1,51 @@
 #checkOut {
-  border: 5px solid green;
   height: 60vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .checkOut__itemsRow {
-  width: 80%;
+  width: 90%;
+  transition: all 1.3s;
+}
+
+.total {
+  transition: all 1;
+  animation: fade-in 1s;
+  padding: 20px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .checkOut__item {
+  transition: all 1;
+  animation: fade-in 1s;
+
+  border-radius: 10px;
+  min-height: 120px;
+  justify-content: space-between;
   display: flex;
   margin: 10px 5px;
+  border: 1px solid rgb(189, 190, 228);
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .checkOut__itemLeft {
   display: flex;
-
-  min-width: 450px;
+  flex-wrap: wrap;
 }
 
 .checkOut__itemLeft div {
@@ -29,4 +58,31 @@
 .checkOut__item img {
   border-radius: 10px;
   height: 100px;
+}
+
+.checkOut__itemRight {
+  display: flex;
+  height: 100%;
+  margin-right: 25px;
+  align-items: center;
+
+  height: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 200px;
+}
+
+.checkOut__itemRight button {
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: all 0.5s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.checkOut__itemRight button:hover {
+  transform: scale(1.1);
 }

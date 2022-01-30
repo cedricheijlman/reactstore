@@ -24,10 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <ProductContext.Provider
         value={{ allProducts, setAllProducts, checkOutCart, setCheckOutCart }}
       >
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/checkout" element={<CheckOut />} />

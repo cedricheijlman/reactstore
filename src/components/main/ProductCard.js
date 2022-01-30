@@ -7,14 +7,19 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
   const { setCheckOutCart } = useContext(ProductContext);
 
   // Add Item to Cart
-  function addToCart(idItem) {
+  function addToCart(idItem, e) {
     commerce.cart.add(keyId, 1).then((res) => {
       setCheckOutCart(res.cart);
-    });
 
-    // update cart
-    commerce.cart.retrieve().then((cart) => {
-      setCheckOutCart(cart);
+      // Animation Cart Add
+      document.querySelector(".cartLength").classList.add("cartScale");
+      e.target.classList.add("cartScaleButton");
+      e.target.innerHTML = "Added to cart";
+      setInterval(() => {
+        document.querySelector(".cartLength").classList.remove("cartScale");
+        e.target.innerHTML = "Add to cart";
+        e.target.classList.remove("cartScaleButton");
+      }, 2000);
     });
   }
   return (
@@ -28,8 +33,8 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
           <p>Available: {stock}</p>
         </div>
         <button
-          onClick={(keyId) => {
-            addToCart(keyId);
+          onClick={(e) => {
+            addToCart(keyId, e);
           }}
         >
           Add To Cart

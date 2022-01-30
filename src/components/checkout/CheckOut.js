@@ -9,10 +9,9 @@ function CheckOut() {
   console.log(checkOutCart);
   return (
     <div id="checkOut">
-      <div className="checkOut__itemsRow">
-        {checkOutCart &&
-          checkOutCart.line_items.length > 0 &&
-          checkOutCart.line_items.map((item) => {
+      {checkOutCart && checkOutCart.line_items.length > 0 && (
+        <div className="checkOut__itemsRow">
+          {checkOutCart.line_items.map((item) => {
             return (
               <CheckOutItem
                 productId={item.product_id}
@@ -21,10 +20,12 @@ function CheckOut() {
               />
             );
           })}
-        {checkOutCart && checkOutCart.line_items.length < 1 && (
-          <h1>No items</h1>
-        )}
-      </div>
+          <div className="total">
+            <h2>Total: {checkOutCart.subtotal.formatted_with_symbol}</h2>
+          </div>
+        </div>
+      )}
+      {checkOutCart && checkOutCart.line_items.length < 1 && <h1>No items</h1>}
     </div>
   );
 }
