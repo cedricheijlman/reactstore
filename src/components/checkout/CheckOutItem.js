@@ -22,10 +22,14 @@ function CheckOutItem({ productId, orderItem }) {
       {productInfo && (
         <div className="checkOut__item">
           <div className="checkOut__itemLeft">
-            <img src={orderItem.image.url} />
+            <img src={orderItem.image ? orderItem.image.url : "logo192.png"} />
             <div>
               <h3>{productInfo.name}</h3>
-              <p>{productInfo.categories[0].name}</p>
+              <p>
+                {productInfo.categories[0]
+                  ? productInfo.categories[0].name
+                  : "Store"}
+              </p>
               <p>{orderItem.line_total.formatted_with_symbol}</p>
             </div>
           </div>

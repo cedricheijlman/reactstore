@@ -26,9 +26,9 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
   }
   return (
     <div className="productCard">
-      <img src={!image ? "logo.png" : image.url} />
+      <img src={!image ? "logo192.png" : image.url} />
       <div className="productCard__text">
-        <h4>{creator.name}</h4>
+        <h4>{creator ? creator.name : "Artist"}</h4>
         <h3>{name}</h3>
         <div className="productCard__priceAndStock">
           <p>{price.formatted_with_symbol}</p>

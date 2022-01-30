@@ -6,11 +6,12 @@ import CheckOutItem from "./CheckOutItem";
 
 function CheckOut() {
   const { checkOutCart } = useContext(ProductContext);
+
   console.log(checkOutCart);
   return (
     <div id="checkOut">
       {checkOutCart && checkOutCart.line_items.length > 0 && (
-        <div className="checkOut__itemsRow">
+        <div className="checkOut__itemsRow fade-in">
           {checkOutCart.line_items.map((item) => {
             return (
               <CheckOutItem
@@ -22,10 +23,15 @@ function CheckOut() {
           })}
           <div className="total">
             <h2>Total: {checkOutCart.subtotal.formatted_with_symbol}</h2>
+            <button>
+              <a href={checkOutCart.hosted_checkout_url}>Purchase</a>
+            </button>
           </div>
         </div>
       )}
-      {checkOutCart && checkOutCart.line_items.length < 1 && <h1>No items</h1>}
+      {checkOutCart && checkOutCart.line_items.length < 1 && (
+        <h1 className="noItems">No items</h1>
+      )}
     </div>
   );
 }

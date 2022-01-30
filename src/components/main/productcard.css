@@ -10,6 +10,7 @@
   height: 420px;
   transition: all 0.5s;
   background-color: rgba(214, 246, 255, 0.294);
+  animation: fade-in 1s;
 }
 
 .productCard img:hover {
@@ -18,7 +19,7 @@
 }
 
 .productCard img {
-  max-width: 250px;
+  width: 250px;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
