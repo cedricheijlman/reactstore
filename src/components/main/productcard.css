@@ -1,9 +1,16 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  border: 1px solid rgb(201, 201, 201);
+  align-items: center;
+  margin: 20px;
+  margin-left: 0;
+  width: 250px;
+  border-radius: 10px;
+  height: 400px;
 }
 
 .productCard img {
-  width: 200px;
+  max-width: 250px;
+  border-radius: 10px 10px 0 0;
 }

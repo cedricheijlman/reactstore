@@ -4,3 +4,9 @@
   background-color: azure;
   display: flex;
 }
+
+.allProductsList {
+  margin: 0 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
