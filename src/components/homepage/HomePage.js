@@ -8,6 +8,7 @@ function HomePage() {
   return (
     <div id="homepage">
       <input
+        placeholder="Search"
         onChange={(e) =>
           e.target.value ? setSearch(e.target.value) : setSearch(null)
         }

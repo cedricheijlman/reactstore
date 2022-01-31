@@ -1,10 +1,16 @@
 #navbar {
   display: flex;
-  background-color: rgba(225, 236, 210, 0.548);
+  background-color: #91c4e65d;
   width: 100%;
   padding: 20px 50px;
   justify-content: space-between;
   align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#navbar a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .navbar__right {
