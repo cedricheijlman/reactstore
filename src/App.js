@@ -6,6 +6,7 @@ import HomePage from "./components/homepage/HomePage";
 import { Routes, Route } from "react-router-dom";
 import { ProductContext } from "./ProductContext";
 import CheckOut from "./components/checkout/CheckOut";
+import ProductPage from "./components/productpage/ProductPage";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/checkout" element={<CheckOut />} />
+          <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
       </ProductContext.Provider>
     </div>
