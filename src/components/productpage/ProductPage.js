@@ -31,11 +31,21 @@ function ProductPage() {
       e.target.classList.remove("cartScaleButton");
     }, 2000);
   }
-  console.log("ProductInfo", productInfo);
+
   return (
     <div id="productInfo">
       {productInfo && (
-        <div className="productInfo__card">
+        <div
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(6, 6, 6, 0.6)), url('${
+              productInfo.image.url.replace(/\s/g, "%20") !== "" &&
+              productInfo.image !== ""
+                ? productInfo.image.url.replace(/\s/g, "%20")
+                : null
+            }') `,
+          }}
+          className="productInfo__card"
+        >
           <img
             src={
               productInfo.image !== null

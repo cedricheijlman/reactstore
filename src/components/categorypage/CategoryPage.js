@@ -24,7 +24,7 @@ function CategoryPage() {
         picture: artist.assets[0].url,
       });
     });
-
+    console.log(category);
     // Set category products
     commerce.products
       .list({ category_id: [String(productPath)] })
@@ -37,15 +37,21 @@ function CategoryPage() {
   return (
     <div className="categoryPage">
       {category.name && (
-        <div className="categoryPage__artist">
+        <div
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(6, 6, 6, 0.7)), url(${category.picture})`,
+          }}
+          className="categoryPage__artist"
+        >
           <h2>{category.name}</h2>
           <img src={category.picture} />
+          <p>{category.description}</p>
         </div>
       )}
 
       {categoryProducts.length > 0 && (
         <div className="categoryPage__artistProducts">
-          <h1>Products</h1>
+          <h2>Products</h2>
           <div className="categoryPage__productsRow">
             {categoryProducts.map((product) => {
               return (

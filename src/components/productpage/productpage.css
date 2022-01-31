@@ -1,23 +1,28 @@
 #productInfo {
   width: 100%;
-  height: 85vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #productInfo img {
-  width: 230px;
+  width: 200px;
   margin-bottom: 20px;
   border-radius: 15px;
 }
 
 .productInfo__card {
-  margin-top: 35px;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  height: 88.6vh;
+  padding: 35px 0;
+  width: 100%;
   align-items: center;
+  justify-content: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
 }
 
 .productInfo__card h3 {
@@ -26,7 +31,7 @@
 }
 
 .productInfo__card h6 {
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(120, 120, 120);
   font-weight: 400;
   margin: 8px 0;
@@ -36,6 +41,7 @@
 .productInfo__description p {
   max-width: 560px;
   margin-bottom: 20px;
+  font-size: 100%;
 }
 
 .productInfo__purchase {
