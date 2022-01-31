@@ -16,13 +16,14 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
     // add item
     commerce.cart.add(keyId, 1).then((res) => {
       setCheckOutCart(res.cart);
-
-      setInterval(() => {
-        document.querySelector(".cartLength").classList.remove("cartScale");
-        e.target.innerHTML = "Add to cart";
-        e.target.classList.remove("cartScaleButton");
-      }, 2000);
     });
+
+    // animation Cart add
+    setInterval(() => {
+      document.querySelector(".cartLength").classList.remove("cartScale");
+      e.target.innerHTML = "Add to cart";
+      e.target.classList.remove("cartScaleButton");
+    }, 2000);
   }
   return (
     <div className="productCard">

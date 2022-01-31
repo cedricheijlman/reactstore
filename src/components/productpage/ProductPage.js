@@ -19,10 +19,13 @@ function ProductPage() {
     // Animation button
     e.target.innerHTML = "Added to cart";
     e.target.classList.add("cartScaleButton");
+
+    // Add to cart
     commerce.cart.add(id, 1).then((res) => {
       setCheckOutCart(res.cart);
     });
 
+    // Animation cart button
     setInterval(() => {
       e.target.innerHTML = "Add to Cart";
       e.target.classList.remove("cartScaleButton");
