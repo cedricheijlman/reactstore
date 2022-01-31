@@ -8,9 +8,7 @@
 
 .categoryPage__artist {
   margin-bottom: 20px;
-
   display: flex;
-  border: 1px solid red;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -46,7 +44,7 @@
 .categoryPage__productsRow {
   padding: 0 10px;
   flex-wrap: wrap;
-  border: 1px solid red;
+
   display: flex;
   width: 100%;
   justify-content: center;

@@ -32,11 +32,13 @@ function CheckOutItem({ productId, orderItem }) {
               <Link to={`/product/${productInfo.id}`}>
                 <h3>{productInfo.name}</h3>
               </Link>
-              <p>
-                {productInfo.categories[0]
-                  ? productInfo.categories[0].name
-                  : "Store"}
-              </p>
+              <Link to={`/category/${productInfo.categories[0].id}`}>
+                <p>
+                  {productInfo.categories[0]
+                    ? productInfo.categories[0].name
+                    : "Store"}
+                </p>
+              </Link>
               <p style={{ marginTop: "5px" }}>
                 {orderItem.line_total.formatted_with_symbol}
               </p>

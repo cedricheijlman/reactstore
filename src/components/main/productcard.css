@@ -45,6 +45,11 @@
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 1px;
+  transition: all 0.2s;
+}
+
+.productCard__text h4:hover {
+  transform: scale(1.03);
 }
 
 .productCard__priceAndStock {
@@ -73,6 +78,7 @@
   font-family: "Montserrat";
   width: 100%;
 }
+
 .productCard button:hover {
   transform: scale(1.01);
   cursor: pointer;

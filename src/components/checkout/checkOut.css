@@ -101,6 +101,14 @@
   margin-left: 20px;
 }
 
+.checkOut__itemLeft div p:nth-child(1) {
+  transition: all 0.4s;
+}
+
+.checkOut__itemLeft div p:nth-child(1):hover {
+  transform: scale(1.01);
+}
+
 .checkOut__item img {
   border-radius: 10px;
   height: 100px;

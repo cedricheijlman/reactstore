@@ -55,10 +55,13 @@ function ProductPage() {
                 : "../logo192.png"
             }
           />
+
+          <h3>{productInfo.name}</h3>
           <Link to={`/category/${productInfo.categories[0].id}`}>
-            <h3>{productInfo.name}</h3>
+            <h6>
+              {productInfo.categories[0] && productInfo.categories[0].name}
+            </h6>
           </Link>
-          <h6>{productInfo.categories[0] && productInfo.categories[0].name}</h6>
           {
             <span
               className="productInfo__description"
