@@ -32,7 +32,9 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
       </Link>
       <div className="productCard__text">
         <h4>{creator ? creator.name : "Artist"}</h4>
-        <h3>{name}</h3>
+        <Link to={`/product/${keyId}`}>
+          <h3>{name}</h3>
+        </Link>
         <div className="productCard__priceAndStock">
           <p>{price.formatted_with_symbol}</p>
           <p>Available: {stock}</p>
