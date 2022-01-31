@@ -5,3 +5,28 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.categoryPage__artist {
+  display: flex;
+  border: 1px solid red;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoryPage__artist img {
+  height: 200px;
+}
+
+.categoryPage__artistProducts {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.categoryPage__productsRow {
+  border: 1px solid red;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
