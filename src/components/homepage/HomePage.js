@@ -7,7 +7,11 @@ function HomePage() {
 
   return (
     <div id="homepage">
-      <input onChange={(e) => setSearch(e.target.value)} />
+      <input
+        onChange={(e) =>
+          e.target.value ? setSearch(e.target.value) : setSearch(null)
+        }
+      />
       <HomeProductList search={search} />
     </div>
   );

@@ -18,7 +18,7 @@ function HomeProductList({ search }) {
   console.log(allProducts);
   return (
     <div className="allProductsList">
-      {loading == true && allProducts.length < 1 && (
+      {loading == true && allProducts && allProducts.length < 1 && (
         <h2 className="loading">Loading..</h2>
       )}
       {allProducts &&
