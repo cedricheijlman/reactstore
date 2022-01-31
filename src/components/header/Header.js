@@ -9,7 +9,7 @@ function Header() {
   return (
     <header id="navbar">
       <Link to="/">
-        <h1>Logo</h1>
+        <h1>Album Store</h1>
       </Link>
       <div className="navbar__right">
         <span className="cartLength">
