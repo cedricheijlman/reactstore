@@ -7,7 +7,6 @@ import CheckOutItem from "./CheckOutItem";
 function CheckOut() {
   const { checkOutCart } = useContext(ProductContext);
 
-  console.log(checkOutCart);
   return (
     <div id="checkOut">
       {checkOutCart && checkOutCart.line_items.length > 0 && (

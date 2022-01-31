@@ -15,7 +15,6 @@ function HomeProductList({ search }) {
     });
   }, [search]);
 
-  console.log(allProducts);
   return (
     <div className="allProductsList">
       {loading == true && allProducts && allProducts.length < 1 && (

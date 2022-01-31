@@ -24,13 +24,12 @@ function CategoryPage() {
         picture: artist.assets[0].url,
       });
     });
-    console.log(category);
+
     // Set category products
     commerce.products
       .list({ category_id: [String(productPath)] })
       .then((response) => {
         setCategoryProducts(response.data);
-        console.log(response.data);
       });
   }, []);
 

@@ -32,7 +32,7 @@ function ProductPage() {
       e.target.classList.remove("cartScaleButton");
     }, 2000);
   }
-  console.log(productInfo);
+
   return (
     <div id="productInfo">
       {productInfo && (
