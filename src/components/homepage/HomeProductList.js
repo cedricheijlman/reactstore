@@ -1,11 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "../main/ProductCard";
 import { ProductContext } from "../../ProductContext";
-function HomeProductList() {
-  const { allProducts, setAllProducts } = useContext(ProductContext);
+import commerce from "../../lib/commerce";
+function HomeProductList({ search }) {
+  const [allProducts, setAllProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  // Get products
+  useEffect(() => {
+    setLoading(true);
+    commerce.products.list({ query: search }).then((response) => {
+      setAllProducts(response.data);
+      setLoading(false);
+    });
+  }, [search]);
+
+  console.log(allProducts);
   return (
     <div className="allProductsList">
+      {loading == true && allProducts.length < 1 && (
+        <h2 className="loading">Loading..</h2>
+      )}
       {allProducts &&
         allProducts.map((product) => {
           return (
