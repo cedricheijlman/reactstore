@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import commerce from "../../lib/commerce";
 import { ProductContext } from "../../ProductContext";
 import "./productpage.css";
@@ -31,17 +32,18 @@ function ProductPage() {
       e.target.classList.remove("cartScaleButton");
     }, 2000);
   }
-
+  console.log(productInfo);
   return (
     <div id="productInfo">
       {productInfo && (
         <div
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(6, 6, 6, 0.6)), url('${
+              productInfo.image &&
               productInfo.image.url.replace(/\s/g, "%20") !== "" &&
               productInfo.image !== ""
                 ? productInfo.image.url.replace(/\s/g, "%20")
-                : null
+                : ""
             }') `,
           }}
           className="productInfo__card"
@@ -53,7 +55,9 @@ function ProductPage() {
                 : "../logo192.png"
             }
           />
-          <h3>{productInfo.name}</h3>
+          <Link to={`/category/${productInfo.categories[0].id}`}>
+            <h3>{productInfo.name}</h3>
+          </Link>
           <h6>{productInfo.categories[0] && productInfo.categories[0].name}</h6>
           {
             <span
