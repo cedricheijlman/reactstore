@@ -14,10 +14,19 @@ function ProductPage() {
     });
   }, []);
 
+  // Add Item to cart
   function addToCart(id, e) {
+    // Animation button
+    e.target.innerHTML = "Added to cart";
+    e.target.classList.add("cartScaleButton");
     commerce.cart.add(id, 1).then((res) => {
       setCheckOutCart(res.cart);
     });
+
+    setInterval(() => {
+      e.target.innerHTML = "Add to Cart";
+      e.target.classList.remove("cartScaleButton");
+    }, 2000);
   }
   console.log("ProductInfo", productInfo);
   return (

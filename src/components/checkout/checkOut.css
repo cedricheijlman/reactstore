@@ -5,6 +5,11 @@
   align-items: center;
 }
 
+#checkOut a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .checkOut__itemsRow {
   width: 90%;
   transition: all 1.3s;

@@ -13,14 +13,16 @@
 }
 
 .productInfo__card {
-  margin-top: 20px;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
   width: 70%;
+  align-items: center;
 }
 
 .productInfo__card h3 {
   font-size: 22px;
+  text-align: left;
 }
 
 .productInfo__card h6 {
