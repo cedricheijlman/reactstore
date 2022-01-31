@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { ProductContext } from "./ProductContext";
 import CheckOut from "./components/checkout/CheckOut";
 import ProductPage from "./components/productpage/ProductPage";
+import CategoryPage from "./components/categorypage/CategoryPage";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/category/:artistid" element={<CategoryPage />} />
         </Routes>
       </ProductContext.Provider>
     </div>

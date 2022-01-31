@@ -32,6 +32,7 @@ function HomeProductList({ search }) {
               image={product.image}
               creator={product.categories[0]}
               stock={product.inventory.available}
+              categoryId={product.categories[0] && product.categories[0].id}
             />
           );
         })}

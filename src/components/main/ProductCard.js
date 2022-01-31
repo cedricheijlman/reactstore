@@ -3,7 +3,15 @@ import "./productcard.css";
 import commerce from "../../lib/commerce";
 import { ProductContext } from "../../ProductContext";
 import { Link } from "react-router-dom";
-function ProductCard({ name, keyId, price, image, creator, stock }) {
+function ProductCard({
+  name,
+  keyId,
+  price,
+  image,
+  creator,
+  stock,
+  categoryId,
+}) {
   const { setCheckOutCart } = useContext(ProductContext);
 
   // Add Item to Cart
@@ -31,7 +39,9 @@ function ProductCard({ name, keyId, price, image, creator, stock }) {
         <img src={!image ? "logo192.png" : image.url} />
       </Link>
       <div className="productCard__text">
-        <h4>{creator ? creator.name : "Artist"}</h4>
+        <Link to={`/category/${categoryId}`}>
+          <h4>{creator ? creator.name : "Artist"}</h4>
+        </Link>
         <Link to={`/product/${keyId}`}>
           <h3>{name}</h3>
         </Link>
