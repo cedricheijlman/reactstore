@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import commerce from "../../lib/commerce";
+import { ProductContext } from "../../ProductContext";
 import "./productpage.css";
 
 function ProductPage() {
   const [productInfo, setProductInfo] = useState(null);
+  const { setCheckOutCart } = useContext(ProductContext);
 
   useEffect(() => {
     const productPath = window.location.pathname.slice(9);
@@ -11,7 +13,13 @@ function ProductPage() {
       setProductInfo(product);
     });
   }, []);
-  console.log("Product", productInfo);
+
+  function addToCart(id, e) {
+    commerce.cart.add(id, 1).then((res) => {
+      setCheckOutCart(res.cart);
+    });
+  }
+  console.log("ProductInfo", productInfo);
   return (
     <div id="productInfo">
       {productInfo && (
@@ -33,7 +41,13 @@ function ProductPage() {
           }
           <div className="productInfo__purchase">
             <p>{productInfo.price.formatted_with_symbol}</p>
-            <button>Add to Cart</button>
+            <button
+              onClick={(e) => {
+                addToCart(productInfo.id, e);
+              }}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       )}
