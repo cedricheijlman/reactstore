@@ -1,0 +1,34 @@
+#productInfo {
+  width: 100%;
+  border: 1px solid red;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#productInfo img {
+  width: 250px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.productInfo__card {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  width: 70%;
+  align-items: center;
+}
+
+.productInfo__card h3 {
+}
+
+.productInfo__description p {
+  max-width: 350px;
+}
+
+.productInfo__purchase {
+  display: flex;
+}
